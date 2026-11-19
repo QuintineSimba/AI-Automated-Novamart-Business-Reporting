@@ -4,6 +4,10 @@
 
 This project demonstrates how Python can automate e-commerce business reporting. It uses a 13,000 row sales dataset to clean data, calculate business KPIs, analyze sales performance, and generate a PDF report.
 
+## Run the Project in Google Colab
+
+[Open Notebook in Google Colab](https://colab.research.google.com/github/QuintineSimba/AI-Automated-Novamart-Business-Reporting/blob/main/Novamart_Business_Reporting.ipynb)
+
 ## Business Problem
 
 Generating business performance reports manually was a repetitive and time-consuming process, requiring data cleaning, KPI calculations, performance analysis, and PDF report preparation. This delayed access to business insights and took time away from decision-making. I solved this by building a Python-powered automated reporting workflow that cleans sales data, calculates key business metrics, identifies performance trends, and generates PDF reports automatically. I also configured daily execution using Windows Task Scheduler. The solution reduced the estimated reporting time from 4 hours to just 3 minutes, representing a 98.75% reduction in reporting time and freeing up more time for business analysis and decision-making.
