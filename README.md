@@ -1,8 +1,8 @@
-# NovaMart — AI-Powered Automated Business Reporting
+# AI-Powered Automated Data and Business Reporting 
 
 ## Project Overview
 
-This project demonstrates how Python can automate e-commerce business reporting. It uses a sample sales dataset to clean data, calculate business KPIs, analyze sales performance, and generate a PDF report.
+This project demonstrates how Python can automate e-commerce business reporting. It uses a 13,000 row sales dataset to clean data, calculate business KPIs, analyze sales performance, and generate a PDF report.
 
 ## Business Problem
 
@@ -15,6 +15,74 @@ Preparing business reports manually can take significant time. This project expl
 - Pandas
 - ReportLab
 - ChatGPT
+
+  ## How to Run This Project
+
+You can reproduce this project using Google Colab without installing Python on your computer.
+
+### Step 1: Open the Notebook
+
+1. Visit the [NovaMart GitHub Repository](https://github.com/QuintineSimba/AI-Automated-Novamart-Business-Reporting).
+2. Open `Novamart_Business_Reporting.ipynb`.
+3. Download the notebook or open Google Colab.
+4. In Google Colab, select **File → Upload notebook** if you downloaded it.
+
+### Step 2: Download the Project Dataset
+
+Run the following code in a new Colab cell:
+
+```python
+!git clone https://github.com/QuintineSimba/AI-Automated-Novamart-Business-Reporting.git
+```
+
+### Step 3: Load the Dataset
+
+Run:
+
+```python
+import pandas as pd
+
+DATA_PATH = '/content/AI-Automated-Novamart-Business-Reporting/Data/novamart_ecommerce_sales.csv'
+
+df = pd.read_csv(DATA_PATH)
+
+print(df.shape)
+df.head()
+```
+
+Expected dataset size: **13,000 rows and 11 columns.**
+
+### Step 4: Run the Analysis
+
+Execute the notebook cells in order, from top to bottom.
+
+The notebook performs:
+- Data inspection and cleaning
+- Exploratory data analysis
+- Revenue calculations
+- Business KPI validation
+- Automated reporting calculations
+
+### Step 5: Generate the PDF Report
+
+Run the PDF-generation section of the notebook to create the NovaMart business report.
+
+The generated PDF contains the key business metrics and findings.
+
+### Step 6: Verify the Results
+
+The final KPI calculations should include:
+
+| Metric | Expected result |
+|---|---:|
+| Total Revenue | KSh 1,075,328.44 |
+| Completed Revenue | KSh 922,638.72 |
+| Returned Value | KSh 33,880.76 |
+| Completed Orders | 11,165 |
+| Returned Orders | 391 |
+| Return Rate | 3.38% |
+
+**Note:** Run the notebook cells in their intended order. If you restart the Colab runtime, execute the setup and function-definition cells again before calling the reporting function.
 
 ## Project Workflow
 
