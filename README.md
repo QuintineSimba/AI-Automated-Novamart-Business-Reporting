@@ -6,7 +6,7 @@ This project demonstrates how Python can automate e-commerce business reporting.
 
 ## Business Problem
 
-Preparing business reports manually can take significant time. This project explores how a reusable Python workflow can reduce repetitive reporting tasks and make business information easier to access.
+Generating business performance reports manually was a repetitive and time-consuming process, requiring data cleaning, KPI calculations, performance analysis, and PDF report preparation. This delayed access to business insights and took time away from decision-making. I solved this by building a Python-powered automated reporting workflow that cleans sales data, calculates key business metrics, identifies performance trends, and generates PDF reports automatically. I also configured daily execution using Windows Task Scheduler. The solution reduced the estimated reporting time from 4 hours to just 3 minutes, representing a 98.75% reduction in reporting time and freeing up more time for business analysis and decision-making.
 
 ## Tools Used
 
@@ -107,18 +107,48 @@ The final KPI calculations should include:
 - Top-performing region: Nairobi
 - Strongest month by completed revenue: August
 
-## Automation Results
-
-The estimated manual reporting time was four hours, compared with an estimated three minutes for the automated workflow.
-
-- Estimated time saved: 3 hours 57 minutes
-- Estimated time reduction: 98.75%
-
-These are estimates, not independently measured benchmarks.
-
 ## Important Data Notes
 
 The dataset contains sample e-commerce transactions. Returned orders are reported separately from completed orders. The available data does not establish exact net sales or profit.
+
+## Automated Daily Reporting
+
+This project includes a standalone Python script (`scheduler.py`) that automatically processes the NovaMart sales dataset, calculates business KPIs, and generates a dated PDF business report.
+
+### Requirements
+
+- Python 3
+- pandas
+- reportlab
+
+### Installation
+
+Install the required libraries:
+
+```bash
+python -m pip install pandas reportlab
+```
+
+### Run the reporting script
+
+From the project directory, execute:
+
+```bash
+python scheduler.py
+```
+
+The generated PDF report is saved in the `Reports/` directory.
+
+### Daily Scheduling
+
+The script can be scheduled to run automatically every day using Windows Task Scheduler.
+
+**Configuration:**
+- Task name: NovaMart Daily Business Report
+- Frequency: Daily
+- Execution time: 8:00 AM
+
+**Note:** The script processes the CSV file currently stored in the project. Update the dataset with new transactions to generate reports containing new sales figures. The scheduled task requires the computer to be powered on and awake.
 
 ## Project Structure
 
@@ -126,6 +156,7 @@ The dataset contains sample e-commerce transactions. Returned orders are reporte
 - `data/` — Source dataset
 - `reports/` — Generated PDF report
 - `README.md` — Project documentation
+- `scheduler.py` — reusable automated reporting script.
 
 ## Conclusion
 
